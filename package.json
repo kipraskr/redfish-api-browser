@@ -1,0 +1,13 @@
+{
+  "name": "redfish-api-browser",
+  "version": "1.0.0",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "check": "node lib.js"
+  },
+  "devDependencies": {
+    "electron": "^33.4.11"
+  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Redfish API Browser</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <button id="back" class="icon" type="button" disabled title="Back"><svg viewBox="0 0 16 16"><path d="M10 3 L5 8 L10 13"/></svg></button>
+    <button id="fwd" class="icon" type="button" disabled title="Forward"><svg viewBox="0 0 16 16"><path d="M6 3 L11 8 L6 13"/></svg></button>
+    <input id="url" value="http://127.0.0.1:8080/redfish/v1" spellcheck="false" />
+    <input id="user" placeholder="user" autocomplete="username" />
+    <input id="pass" type="password" placeholder="password" autocomplete="current-password" />
+    <select id="auth">
+      <option value="basic">Basic</option>
+      <option value="session">Session</option>
+    </select>
+    <button id="go" class="icon" type="button" title="Go"><svg viewBox="0 0 16 16"><path d="M3 8 H12 M8 4 L12 8 L8 12"/></svg></button>
+    <button id="refresh" class="icon" type="button" disabled title="Refresh"><svg viewBox="0 0 16 16"><path d="M13.5 8 A5.5 5.5 0 1 1 12 4.2"/><path d="M12 1.5 V4.5 H9"/></svg></button>
+    <button id="save" class="icon" type="button" disabled title="Save"><svg viewBox="0 0 16 16"><path d="M3 2 H10 L13 5 V14 H3 Z"/><path d="M5 2 V6 H9"/><path d="M5 14 V9 H11 V14"/></svg></button>
+    <label class="chk"><input id="expand" type="checkbox" /> Expand</label>
+    <button id="logout" type="button" hidden>Logout</button>
+    <button id="theme" class="icon" type="button" title="Light theme"><svg class="sun" viewBox="0 0 16 16"><circle cx="8" cy="8" r="2.2"/><path d="M8 1.5 V3.2 M8 12.8 V14.5 M1.5 8 H3.2 M12.8 8 H14.5 M3.3 3.3 L4.5 4.5 M11.5 11.5 L12.7 12.7 M12.7 3.3 L11.5 4.5 M4.5 11.5 L3.3 12.7"/></svg><svg class="moon" viewBox="0 0 16 16"><path d="M9.5 1.8 A5.8 5.8 0 1 0 14.2 9.2 A4.4 4.4 0 0 1 9.5 1.8 Z" fill="currentColor" stroke="none"/></svg></button>
+    <span id="status"></span>
+  </header>
+  <div id="main">
+    <div id="find" hidden>
+      <input id="findq" placeholder="Find" spellcheck="false" />
+      <span id="findn"></span>
+      <button id="findprev" type="button" title="Previous">↑</button>
+      <button id="findnext" type="button" title="Next">↓</button>
+      <button id="findx" type="button" title="Close">×</button>
+    </div>
+    <div id="view">
+      <div id="tree"></div>
+      <div id="loading" hidden><div class="spin"></div></div>
+    </div>
+    <aside id="side">
+      <h2>Resource</h2>
+      <div id="meta"></div>
+    </aside>
+  </div>
+  <script src="lib.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>
